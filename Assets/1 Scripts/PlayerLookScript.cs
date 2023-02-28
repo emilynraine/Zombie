@@ -25,10 +25,8 @@ public class PlayerLookScript : MonoBehaviour
         // _transform.rotation = Quaternion.Euler(0, horizontalAngle, 0);
         // _headTransform.localRotation = Quaternion.Euler(verticalAngle, 0, 0);
 
-        float horizontalAngle = _transform.localEulerAngles.y
-            + (Input.GetAxis("Mouse X") * 6);
-        verticalAngle = _transform.localEulerAngles.x
-            - (Input.GetAxis("Mouse Y") * 6);
+        float horizontalAngle = _transform.localEulerAngles.y + (Input.GetAxis("Mouse X") * 6);
+        verticalAngle -= (Input.GetAxis("Mouse Y") * 6);
         _transform.localEulerAngles = new Vector3(verticalAngle, horizontalAngle, 0);
     }
 }
