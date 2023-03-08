@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static System.Net.Mime.MediaTypeNames;
 
 public class MSMScript : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class MSMScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
