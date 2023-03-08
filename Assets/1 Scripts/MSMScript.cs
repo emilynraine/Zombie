@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishScript : MonoBehaviour
+public class MSMScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,5 @@ public class FishScript : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void OnCollisionEnter(Collision c)
-    {
-
     }
 }
