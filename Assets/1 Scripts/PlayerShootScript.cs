@@ -9,10 +9,8 @@ using UnityEngine.UI;
 public class PlayerShootScript : MonoBehaviour
 {
     MSMScript _manager;
-    //[SerializeField]
-    //private AudioClip _shootClip;
-    //[SerializeField]
-    //private AudioClip _damageClip;
+    [SerializeField]
+    private AudioClip _shootClip;
     public GameObject _dummyHarpoon;
     public Transform _harpoonSpawnPt;
     public GameObject _harpoonPrefab;
@@ -44,7 +42,7 @@ public class PlayerShootScript : MonoBehaviour
             if (_isReloaded)
             {
 
-                //StartCoroutine(PlaySound(_shootClip));
+                StartCoroutine(PlaySound(_shootClip));
 
                 GameObject harpoon = _harpoonPool.GetObject();
 
@@ -82,7 +80,7 @@ public class PlayerShootScript : MonoBehaviour
         _loadingText.text = "";
         _dummyHarpoon.SetActive(true);
     }
-    /*IEnumerator PlaySound(AudioClip _clip)
+    IEnumerator PlaySound(AudioClip _clip)
     {
         AudioSource _audioSource = GetComponent<AudioSource>();
         _audioSource.clip = _clip;
@@ -90,13 +88,5 @@ public class PlayerShootScript : MonoBehaviour
         yield return new WaitForSeconds(_audioSource.clip.length);
     }
 
-    IEnumerator PlaySoundInactive(AudioClip _clip)
-    {
-        AudioSource _audioSource = GetComponent<AudioSource>();
-        _audioSource.clip = _clip;
-        _audioSource.Play();
-        yield return new WaitForSeconds(_audioSource.clip.length);
 
-
-    }*/
 }
