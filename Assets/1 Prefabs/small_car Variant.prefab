@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6165052660276552084, guid: 3b9901dcb2f831447bfd8e1a3a3eb8c6, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7111496756926285222, guid: 3b9901dcb2f831447bfd8e1a3a3eb8c6, type: 3}
       propertyPath: m_Name
-      value: small_car
+      value: small_car Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111496756926285222, guid: 3b9901dcb2f831447bfd8e1a3a3eb8c6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7636640641255956252, guid: 3b9901dcb2f831447bfd8e1a3a3eb8c6, type: 3}
       propertyPath: m_RootOrder

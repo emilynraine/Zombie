@@ -9,7 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1090827394831544, guid: e8e4c79974d5dd2469bc0c0055921376, type: 3}
       propertyPath: m_Name
-      value: Bush_1_2
+      value: Bush_1_2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090827394831544, guid: e8e4c79974d5dd2469bc0c0055921376, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216233455527292, guid: e8e4c79974d5dd2469bc0c0055921376, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980800274620824, guid: e8e4c79974d5dd2469bc0c0055921376, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4661051229156556, guid: e8e4c79974d5dd2469bc0c0055921376, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +69,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e4c79974d5dd2469bc0c0055921376, type: 3}
+--- !u!1 &5175544293527194239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1090827394831544, guid: e8e4c79974d5dd2469bc0c0055921376, type: 3}
+  m_PrefabInstance: {fileID: 5174875695810895559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2983839492370802940
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175544293527194239}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300028, guid: 2072bd79c1ae41441b0d087f04e9ec49, type: 3}

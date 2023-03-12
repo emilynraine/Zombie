@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1488684175275520, guid: 2ab833ef86401f8409c0310ffb61631e, type: 3}
       propertyPath: m_Name
-      value: Grass_1_1
+      value: Grass_1_1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488684175275520, guid: 2ab833ef86401f8409c0310ffb61631e, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4412714568244462, guid: 2ab833ef86401f8409c0310ffb61631e, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +61,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ab833ef86401f8409c0310ffb61631e, type: 3}
+--- !u!1 &6359049624229736518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1488684175275520, guid: 2ab833ef86401f8409c0310ffb61631e, type: 3}
+  m_PrefabInstance: {fileID: 6357578551641261638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1854815245804489633
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6359049624229736518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300022, guid: 2072bd79c1ae41441b0d087f04e9ec49, type: 3}

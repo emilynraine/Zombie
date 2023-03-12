@@ -9,7 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1752188049916452, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
       propertyPath: m_Name
-      value: FallenTree_1_1
+      value: FallenTree_1_1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752188049916452, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874889580073250, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922290694309860, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4425891714653858, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
       propertyPath: m_RootOrder
@@ -55,5 +67,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 136828566481799644, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
+--- !u!1 &934993847859232265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1752188049916452, guid: c33d23e7dff87c94bbbf8303e2318397, type: 3}
+  m_PrefabInstance: {fileID: 936742574156725293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4166952734688258669
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934993847859232265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300014, guid: 2072bd79c1ae41441b0d087f04e9ec49, type: 3}

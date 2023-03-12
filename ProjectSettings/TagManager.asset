@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - harpoon
+  - Waypoint
+  - Shark
+  - Fish
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Stuff
   - Water
   - UI
   - 

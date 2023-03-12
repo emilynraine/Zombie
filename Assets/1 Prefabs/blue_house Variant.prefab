@@ -53,7 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3283030447293352184, guid: eaa7c692fb9d5474b8e9c421d398a498, type: 3}
       propertyPath: m_Name
-      value: blue_house
+      value: blue_house Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283030447293352184, guid: eaa7c692fb9d5474b8e9c421d398a498, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319323558900867812, guid: eaa7c692fb9d5474b8e9c421d398a498, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa7c692fb9d5474b8e9c421d398a498, type: 3}

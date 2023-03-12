@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -61356102196054575, guid: 1bd929fb09b1fbe4bb7020913cbc6b51, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2630909765280098422, guid: 1bd929fb09b1fbe4bb7020913cbc6b51, type: 3}
       propertyPath: m_Name
-      value: yellow_house
+      value: yellow_house Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630909765280098422, guid: 1bd929fb09b1fbe4bb7020913cbc6b51, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3443299687641133772, guid: 1bd929fb09b1fbe4bb7020913cbc6b51, type: 3}
       propertyPath: m_RootOrder

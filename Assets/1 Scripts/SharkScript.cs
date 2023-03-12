@@ -18,9 +18,9 @@ public class SharkScript : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        if(c.gameObject.name == "harpoon")
+        if(c.gameObject.tag == "harpoon")
         {
-            print("shark collision");
+            print("shark hit");
             Destroy(gameObject);
         }
     }

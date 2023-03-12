@@ -71,6 +71,10 @@ public class PlayerShootScript : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+        if(c.gameObject.tag == "Shark")
+        {
+            print("Died");
+        }
     }
 
     IEnumerator Reload()

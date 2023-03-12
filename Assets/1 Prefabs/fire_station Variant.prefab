@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4576547843389108978, guid: 99c77392ba704a84d9c21d1a06b2ed42, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4936493636868460707, guid: 99c77392ba704a84d9c21d1a06b2ed42, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749445679788657177, guid: 99c77392ba704a84d9c21d1a06b2ed42, type: 3}
       propertyPath: m_Name
-      value: fire_station
+      value: fire_station Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749445679788657177, guid: 99c77392ba704a84d9c21d1a06b2ed42, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c77392ba704a84d9c21d1a06b2ed42, type: 3}

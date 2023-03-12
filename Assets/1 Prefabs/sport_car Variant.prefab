@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -532980559752543263, guid: 63ec5a47ee81cfb45a962439d42d8f7a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3566737071470229247, guid: 63ec5a47ee81cfb45a962439d42d8f7a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4194057230548692037, guid: 63ec5a47ee81cfb45a962439d42d8f7a, type: 3}
       propertyPath: m_Name
-      value: sport_car
+      value: sport_car Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194057230548692037, guid: 63ec5a47ee81cfb45a962439d42d8f7a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63ec5a47ee81cfb45a962439d42d8f7a, type: 3}
