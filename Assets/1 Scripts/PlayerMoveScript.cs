@@ -25,5 +25,18 @@ public class PlayerMoveScript : MonoBehaviour
             Vector3 move = new Vector3(_scale * Input.GetAxis("Horizontal"), 0, _scale * Input.GetAxis("Vertical"));
             _transform.position +=  _transform.rotation * (Time.deltaTime * move);
         }
+
+        if(_transform.localPosition.y >= 15)
+        {
+            _transform.localPosition = new Vector3(_transform.localPosition.x, 14.5f, _transform.localPosition.z);
+        }
+    }
+
+    void OnCollisionEnter(Collision c)
+    {
+        if(c.gameObject.tag == "Shark")
+        {
+            print("Died");
+        }
     }
 }

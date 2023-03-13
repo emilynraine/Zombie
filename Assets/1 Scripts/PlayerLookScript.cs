@@ -18,6 +18,7 @@ public class PlayerLookScript : MonoBehaviour
     {
         float horizontalAngle = _transform.eulerAngles.y + (Input.GetAxis("Mouse X") * 4);
         verticalAngle -= (Input.GetAxis("Mouse Y") * 4);
+        verticalAngle = Mathf.Clamp(verticalAngle, -60, 60);
 
         _transform.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
     }
