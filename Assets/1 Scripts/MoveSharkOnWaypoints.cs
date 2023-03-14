@@ -8,6 +8,7 @@ public class MoveSharkOnWaypoints : MonoBehaviour
     public GameObject _player;
     float _timeSinceWaypoint = 0;
     Transform _transform;
+    Rigidbody _rbody;
     bool _chasePlayer = true;
     int _speed = 4;
     int location;
@@ -15,6 +16,7 @@ public class MoveSharkOnWaypoints : MonoBehaviour
     void Start()
     {
         _transform = transform;
+        _rbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,11 @@ public class MoveSharkOnWaypoints : MonoBehaviour
             Vector3 destination = _player.transform.position;
             Vector3 newPos = Vector3.MoveTowards(_transform.position, destination, _speed * Time.deltaTime);
             _transform.position = newPos;
+
+            _transform.LookAt(_player.transform);
+            Quaternion currentRot = transform.localRotation;
+            currentRot.y += 135;
+            transform.localRotation = currentRot;
         }
 
         //Follow a waypoint
@@ -51,12 +58,10 @@ public class MoveSharkOnWaypoints : MonoBehaviour
             Vector3 newPos = Vector3.MoveTowards(_transform.position, destination, _speed * Time.deltaTime);
             _transform.position = newPos;
 
-            if(newPos != Vector3.zero)
-            {
-                Quaternion toRotation = Quaternion.LookRotation(newPos, Vector3.up);
-
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 100 * Time.deltaTime);
-            }
+            _transform.LookAt(_waypoints[location].transform);
+            Quaternion currentRot = transform.localRotation;
+            currentRot.y += 135;
+            transform.localRotation = currentRot;
 
             float distance = Vector3.Distance(_transform.position, destination);
             if(distance <= 0.05)

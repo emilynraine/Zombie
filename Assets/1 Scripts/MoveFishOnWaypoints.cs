@@ -39,12 +39,10 @@ public class MoveFishOnWaypoints : MonoBehaviour
             Vector3 newPos = Vector3.MoveTowards(_transform.position, _destination, _speed * Time.deltaTime);
             _transform.position = newPos;
 
-            if(newPos != Vector3.zero)
-            {
-                Quaternion toRotation = Quaternion.LookRotation(newPos, Vector3.up);
-
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 15 * Time.deltaTime);
-            }
+            _transform.LookAt(_waypoints[_index].transform);
+            Quaternion currentRot = transform.localRotation;
+            currentRot.y += 135;
+            transform.localRotation = currentRot;
 
             float distance = Vector3.Distance(_transform.position, _destination);
             if(distance <= 0.05)
