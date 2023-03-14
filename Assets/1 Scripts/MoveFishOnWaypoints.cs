@@ -9,7 +9,7 @@ public class MoveFishOnWaypoints : MonoBehaviour
     public GameObject _player;
     Transform _transform;
     Vector3 _destination;
-    int _speed = 5;
+    int _speed = 3;
     int _index = 0;
     bool _isDeadly;
 

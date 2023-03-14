@@ -102,3 +102,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed51adc5df623144b5924596b746ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2089541915081249707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809773803641068194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bbef9a38cd53047b587d183fdfa462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waypoints: []
+  _player: {fileID: 0}

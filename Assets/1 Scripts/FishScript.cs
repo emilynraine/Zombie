@@ -18,6 +18,10 @@ public class FishScript : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-
+        if(c.gameObject.tag == "harpoon")
+        {
+            print("fish hit");
+            Destroy(gameObject);
+        }
     }
 }
