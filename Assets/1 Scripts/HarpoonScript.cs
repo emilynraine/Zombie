@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class HarpoonScript : MonoBehaviour
 {
-    public HarpoonTipScript _harpoonTip;
-    // Start is called before the first frame update
+    Rigidbody _rbody;
+    Transform _transform;
+
     void Start()
     {
-        _harpoonTip = FindObjectOfType<HarpoonTipScript>();
-        _harpoonTip.SetParent(this);
-       
+        _transform = transform;
+        _rbody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        _harpoonTip.SetParentTransform(transform);
+        if (_rbody.velocity != Vector3.zero)
+        {
+            _transform.rotation = Quaternion.LookRotation(_rbody.velocity);
+        }
+
     }
 
-    public void SetInactive()
+    void OnCollisionEnter(Collision c)
     {
         gameObject.SetActive(false);
     }
+
+
 }

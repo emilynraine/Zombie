@@ -12,10 +12,12 @@ public class PlayerShootScript : MonoBehaviour
     [SerializeField]
     private AudioClip _shootClip;
     public GameObject _dummyHarpoon;
-    public Transform _harpoonSpawnPt;
+    public Transform _harpoonSpawnPtX;
+    public Transform _harpoonSpawnPtY;
     public GameObject _harpoonPrefab;
     public Text _loadingText;
     public loadingbar _loadingBar;
+    Vector3 _harpoonDirection;
 
     Transform _transform;
 
@@ -25,6 +27,7 @@ public class PlayerShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _harpoonDirection = _harpoonSpawnPtY.position - _harpoonSpawnPtX.position;
         _dummyHarpoon.SetActive(true);
         _loadingBar.imageComp.fillAmount = 1.0f;
         _loadingText.text = "";
@@ -43,15 +46,19 @@ public class PlayerShootScript : MonoBehaviour
             {
 
                 StartCoroutine(PlaySound(_shootClip));
+                _dummyHarpoon.SetActive(false);
 
                 GameObject harpoon = _harpoonPool.GetObject();
-
-                harpoon.transform.position = _harpoonSpawnPt.position;
-                harpoon.transform.rotation = _transform.rotation;
-
-                _dummyHarpoon.SetActive(false);
-                harpoon.SetActive(true);
                 
+                Rigidbody _hRbody = harpoon.GetComponent<Rigidbody>();
+                _harpoonDirection = _harpoonSpawnPtY.position - _harpoonSpawnPtX.position;
+                _hRbody.velocity = _harpoonDirection * 120;
+                harpoon.transform.rotation = Quaternion.LookRotation(_hRbody.velocity);
+
+                harpoon.transform.position = _harpoonSpawnPtX.position;
+
+
+                harpoon.SetActive(true);
 
                 _isReloaded = false;
                 StartCoroutine(Reload());
@@ -63,10 +70,8 @@ public class PlayerShootScript : MonoBehaviour
 
         }
 
-
-            //}
-       // }
     }
+
 
     IEnumerator Reload()
     {

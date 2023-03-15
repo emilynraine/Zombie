@@ -1234,6 +1234,8 @@ PrefabInstance:
     - {fileID: 5684467476109700013, guid: 0f73f48456333124591e4719b7adfe1e, type: 3}
     - {fileID: 8982315022937519759, guid: 0f73f48456333124591e4719b7adfe1e, type: 3}
     - {fileID: 7972929527512751297, guid: 0f73f48456333124591e4719b7adfe1e, type: 3}
+    - {fileID: -3088474469329272509, guid: 0f73f48456333124591e4719b7adfe1e, type: 3}
+    - {fileID: -8457864289963715031, guid: 0f73f48456333124591e4719b7adfe1e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f73f48456333124591e4719b7adfe1e, type: 3}
 --- !u!1001 &243505355
 PrefabInstance:
@@ -1608,6 +1610,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ca9013122166634cb02c5d770d9ce95, type: 3}
+--- !u!1 &368334202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368334203}
+  m_Layer: 0
+  m_Name: SpawnPointY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &368334203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368334202}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.003, z: -0.809}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2007198084}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &408004681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5631,7 +5664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1504263504}
   m_Layer: 0
-  m_Name: BulletSpawnPoint
+  m_Name: SpawnPointX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5645,7 +5678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504263503}
   m_LocalRotation: {x: 0.03489949, y: -0, z: -0, w: 0.9993909}
-  m_LocalPosition: {x: 0.016000003, y: -0.01, z: -0.47}
+  m_LocalPosition: {x: 0.016000003, y: 0.002, z: -0.469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7891,8 +7924,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootClip: {fileID: 8300000, guid: 62c9dd04fc982394cac2dff14424de44, type: 3}
   _dummyHarpoon: {fileID: 40919614}
-  _harpoonSpawnPt: {fileID: 1504263504}
-  _harpoonPrefab: {fileID: 8141971418151881799, guid: 0f73f48456333124591e4719b7adfe1e, type: 3}
+  _harpoonSpawnPtX: {fileID: 1504263504}
+  _harpoonSpawnPtY: {fileID: 368334203}
+  _harpoonPrefab: {fileID: 8141971418151881799, guid: 8fd8676683cbefd4ca4ad9567bf9dd46, type: 3}
   _loadingText: {fileID: 276977840}
   _loadingBar: {fileID: 1505112848}
 --- !u!82 &2007198091

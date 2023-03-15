@@ -3,7 +3,14 @@ guid: 2288a14d34ff45740bee3872957bc863
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _shootClip: {instanceID: 0}
+  - _dummyHarpoon: {instanceID: 0}
+  - _harpoonSpawnPt: {instanceID: 0}
+  - _harpoonPrefab: {fileID: 8141971418151881799, guid: 8fd8676683cbefd4ca4ad9567bf9dd46, type: 3}
+  - _loadingText: {instanceID: 0}
+  - _loadingBar: {instanceID: 0}
+  - _gunTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
