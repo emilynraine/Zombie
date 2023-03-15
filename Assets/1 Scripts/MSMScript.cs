@@ -25,6 +25,15 @@ public class MSMScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_score > 3 && _difficulty > 5)
+        {
+            _difficulty = 5;
+        }
+        if(_score > 5 && _difficulty > 3)
+        {
+            _difficulty = 3;
+        }
+
         _scoreText.text = "" + _score.ToString();
         if (_playerIsAlive)
         {
