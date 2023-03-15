@@ -8,12 +8,14 @@ public class PlayerMoveScript : MonoBehaviour
     Transform _transform;
     float _scale = 8;
     bool _movement = true;
+    MSMScript _manager;
 
     // Start is called before the first frame update
     void Start()
     {
         _rbody = GetComponent<Rigidbody>();
         _transform = transform;
+        _manager = FindObjectOfType<MSMScript>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class PlayerMoveScript : MonoBehaviour
     {
         if(c.gameObject.tag == "Shark")
         {
+            _manager._playerIsAlive = false;
             print("Died");
         }
     }

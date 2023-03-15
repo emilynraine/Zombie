@@ -2937,7 +2937,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.29310542, g: 0.40885586, b: 0.8962264, a: 1}
-  m_Intensity: 0.75
+  m_Intensity: 0.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4659,6 +4659,7 @@ MonoBehaviour:
   - {fileID: 426373694}
   - {fileID: 59756635}
   - {fileID: 1699313181}
+  _playerIsAlive: 1
 --- !u!82 &1112974800
 AudioSource:
   m_ObjectHideFlags: 0
