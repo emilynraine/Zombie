@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MSMScript : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class MSMScript : MonoBehaviour
     public List<GameObject> _waypoints;
     float _timeSinceShark = 5;
     public bool _playerIsAlive = true;
+    public int _score = 0;
+    public int _difficulty = 10;
+    public Text _scoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +25,11 @@ public class MSMScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _scoreText.text = "" + _score.ToString();
         if (_playerIsAlive)
         {
             _timeSinceShark = _timeSinceShark + Time.deltaTime;
-            if (_timeSinceShark > 10)
+            if (_timeSinceShark > _difficulty)
             {
                 _timeSinceShark = 0;
                 int location = Random.Range(0, 9);
@@ -47,7 +52,20 @@ public class MSMScript : MonoBehaviour
 
         else
         {
-            Invoke("LoadRestartScene", 2.0f);
+            PlayerPrefs.SetInt("currScore", _score);
+
+            if (PlayerPrefs.HasKey("highScore"))
+            {
+                if (_score > PlayerPrefs.GetInt("highScore"))
+                {
+                    PlayerPrefs.SetInt("highScore", _score);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt("highScore", _score);
+            }
+            Invoke("LoadRestartScene", 3.0f);
         }
     }
 
@@ -55,5 +73,10 @@ public class MSMScript : MonoBehaviour
     {
         SceneManager.LoadScene("RestartScene");
 
+    }
+
+    public void IncreaseScore()
+    {
+        _score++;
     }
 }

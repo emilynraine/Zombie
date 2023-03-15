@@ -36,7 +36,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        if(c.gameObject.tag == "Shark")
+        if(c.gameObject.tag == "Shark" || c.gameObject.tag == "Fish")
         {
             _manager._playerIsAlive = false;
             print("Died");
