@@ -136,12 +136,13 @@ public class PlayerShootScript : MonoBehaviour
     {
         _barImg.color = _infinityBarColor;
         _timerStarted = true;
-        yield return new WaitForSeconds(15.0f);
+        yield return new WaitForSeconds(20.0f);
         _timerStarted = false;
         _hasUnlimited = false;
         _barImg.color = _normalBarColor;
         _loadingText.fontSize = 25;
         _loadingText.text = "";
+        _announced = false;
     }
 
     public IEnumerator PowerUpAnnounce()
