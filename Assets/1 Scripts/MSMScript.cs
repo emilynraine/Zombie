@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MSMScript : MonoBehaviour
 {
+    AudioSource _mainAudioSource;
     public GameObject _fish1;
     public GameObject _shark;
     public List<GameObject> _waypoints;
@@ -11,6 +12,8 @@ public class MSMScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _mainAudioSource = GetComponent<AudioSource>();
+        _mainAudioSource.Play();
     }
 
     // Update is called once per frame
