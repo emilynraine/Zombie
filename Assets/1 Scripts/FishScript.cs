@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class FishScript : MonoBehaviour
 {
+    PlayerShootScript _pSScript;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _pSScript = FindObjectOfType<PlayerShootScript>();
     }
 
     // Update is called once per frame
@@ -21,7 +22,11 @@ public class FishScript : MonoBehaviour
         if(c.gameObject.tag == "harpoon")
         {
             print("fish hit");
+            _pSScript._hasUnlimited = true;
             Destroy(gameObject);
         }
+
+            
+        
     }
 }
