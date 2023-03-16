@@ -15,6 +15,7 @@ public class MSMScript : MonoBehaviour
     public int _score = 0;
     public int _difficulty = 10;
     public Text _scoreText;
+    public GameObject _blackoutSquare;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +61,7 @@ public class MSMScript : MonoBehaviour
         }
         else
         {
+            StartCoroutine(BlackOut());
             PlayerPrefs.SetInt("currScore", _score);
 
             if (PlayerPrefs.HasKey("highScore"))
@@ -76,7 +78,7 @@ public class MSMScript : MonoBehaviour
             PlayerPrefs.Save();
 
             print(PlayerPrefs.GetInt("currScore", _score));
-            Invoke("LoadRestartScene", 3.0f);
+            Invoke("LoadRestartScene", 3.5f);
         }
     }
 
@@ -89,5 +91,23 @@ public class MSMScript : MonoBehaviour
     public void IncreaseScore()
     {
         _score++;
+    }
+
+    public IEnumerator BlackOut(bool fadeToBlack = true, float fadeSpeed = .3f)
+    {
+        Color objectColor = _blackoutSquare.GetComponent<Image>().color;
+        float fadeAmount;
+
+        if(fadeToBlack)
+        {
+            while(_blackoutSquare.GetComponent<Image>().color.a < 1)
+            {
+                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+
+                objectColor = new Color(objectColor.r, objectColor.b, objectColor.g, fadeAmount);
+                _blackoutSquare.GetComponent<Image>().color = objectColor;
+                yield return null;
+            }
+        }
     }
 }
