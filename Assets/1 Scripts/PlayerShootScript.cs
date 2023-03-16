@@ -18,6 +18,7 @@ public class PlayerShootScript : MonoBehaviour
     public GameObject _harpoonPrefab;
     public Text _loadingText;
     public Text _powerUpText;
+    public Text _activeText;
     public loadingbar _loadingBar;
     public bool _hasUnlimited = false;
     public bool _announced = false;
@@ -41,6 +42,7 @@ public class PlayerShootScript : MonoBehaviour
         _dummyHarpoon.SetActive(true);
         _loadingBar.imageComp.fillAmount = 1.0f;
         _loadingText.text = "";
+        _activeText.text = "";
         _manager = FindObjectOfType<MSMScript>();
         
         _harpoonPool = new HarpoonPool(_harpoonPrefab, true, 10);
@@ -55,6 +57,7 @@ public class PlayerShootScript : MonoBehaviour
         if (_hasUnlimited && !_announced)
         {
             StartCoroutine(PowerUpAnnounce());
+            
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -82,6 +85,7 @@ public class PlayerShootScript : MonoBehaviour
                 {
                     StartCoroutine(Reload());
                     _loadingBar.imageComp.fillAmount = 0.0f;
+                    _loadingText.fontSize = 25;
                     _loadingText.text = "Reloading...";
                 }
                 else
@@ -142,11 +146,13 @@ public class PlayerShootScript : MonoBehaviour
         _barImg.color = _normalBarColor;
         _loadingText.fontSize = 25;
         _loadingText.text = "";
+        _activeText.text = "";
         _announced = false;
     }
 
     public IEnumerator PowerUpAnnounce()
     {
+        _activeText.text = ("\u221e");
         _announced = true;
         _powerUpText.text = "Press 'E' to activate instant reloads";
         yield return new WaitForSeconds(5.0f);
