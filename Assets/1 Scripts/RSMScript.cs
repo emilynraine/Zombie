@@ -20,8 +20,9 @@ public class RSMScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         _scoreText.text = "Your Score: " + PlayerPrefs.GetInt("currScore");
-        _highScoreText.text = "High Score: " + PlayerPrefs.GetInt("currHighScore");
+        _highScoreText.text = "High Score: " + PlayerPrefs.GetInt("highScore");
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {

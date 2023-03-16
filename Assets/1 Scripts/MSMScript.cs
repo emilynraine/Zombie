@@ -58,7 +58,6 @@ public class MSMScript : MonoBehaviour
                 fish.transform.position = new Vector3(10, 2, -66);
             }
         }
-
         else
         {
             PlayerPrefs.SetInt("currScore", _score);
@@ -74,6 +73,7 @@ public class MSMScript : MonoBehaviour
             {
                 PlayerPrefs.SetInt("highScore", _score);
             }
+            PlayerPrefs.Save();
             Invoke("LoadRestartScene", 3.0f);
         }
     }

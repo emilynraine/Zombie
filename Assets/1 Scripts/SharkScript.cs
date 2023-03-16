@@ -5,10 +5,12 @@ using UnityEngine;
 public class SharkScript : MonoBehaviour
 {
     public MSMScript _manager;
+    public MoveSharkOnWaypoints  _movement;
     // Start is called before the first frame update
     void Start()
     {
         _manager = FindObjectOfType<MSMScript>();
+        _movement = FindObjectOfType<MoveSharkOnWaypoints>();
     }
 
     // Update is called once per frame
@@ -23,7 +25,8 @@ public class SharkScript : MonoBehaviour
         {
             print("shark hit");
             _manager.IncreaseScore();
-            Invoke("DestroyShark", 2.0f);
+            _movement._dead = true;
+            Invoke("DestroyShark", .5f);
         }
     }
 
