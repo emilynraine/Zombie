@@ -74,6 +74,8 @@ public class MSMScript : MonoBehaviour
                 PlayerPrefs.SetInt("highScore", _score);
             }
             PlayerPrefs.Save();
+
+            print(PlayerPrefs.GetInt("currScore", _score));
             Invoke("LoadRestartScene", 3.0f);
         }
     }
