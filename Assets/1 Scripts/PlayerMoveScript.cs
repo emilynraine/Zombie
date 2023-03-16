@@ -26,6 +26,11 @@ public class PlayerMoveScript : MonoBehaviour
         {
             Vector3 move = new Vector3(_scale * Input.GetAxis("Horizontal"), 0, _scale * Input.GetAxis("Vertical"));
             _transform.position +=  _transform.rotation * (Time.deltaTime * move);
+
+            if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+            {
+                _rbody.velocity = Vector3.zero;
+            }
         }
 
         if(_transform.localPosition.y >= 15)
