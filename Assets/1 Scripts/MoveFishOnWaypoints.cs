@@ -9,59 +9,41 @@ public class MoveFishOnWaypoints : MonoBehaviour
     public GameObject _player;
     Transform _transform;
     Vector3 _destination;
-    int _speed = 3;
+    int _speed = 4;
     int _index = 0;
-    bool _isDeadly;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Set the type of fish
-        int rand = Random.Range(0,2);
-        if(rand == 1)
-        {
-            _isDeadly = true;
-        }
-        else
-        {
-            _isDeadly = false;
-        }
-
         _transform = transform;
+        int rand = Random.Range(1, 10);
+        _index = rand;
+        _transform.position = _waypoints[_index].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!_isDeadly)
+        _destination = _waypoints[_index].transform.position;
+        Vector3 newPos = Vector3.MoveTowards(_transform.position, _destination, _speed * Time.deltaTime);
+        _transform.position = newPos;
+
+        _transform.LookAt(_waypoints[_index].transform);
+        Quaternion currentRot = transform.localRotation;
+        _transform.localRotation = currentRot;
+        _transform.Rotate(new Vector3(0, 90, 0));
+
+        float distance = Vector3.Distance(_transform.position, _destination);
+        if(distance <= 0.05)
         {
-            _destination = _waypoints[_index].transform.position;
-            Vector3 newPos = Vector3.MoveTowards(_transform.position, _destination, _speed * Time.deltaTime);
-            _transform.position = newPos;
-
-            _transform.LookAt(_waypoints[_index].transform);
-            Quaternion currentRot = transform.localRotation;
-            _transform.localRotation = currentRot;
-            _transform.Rotate(new Vector3(0, 90, 0));
-
-            float distance = Vector3.Distance(_transform.position, _destination);
-            if(distance <= 0.05)
+            if(_index == 9)
             {
-                if(_index == 9)
-                {
-                    _index = 0;
-                }
-                else
-                {
-                    _index++;
-                }
+                _index = 0;
             }
-        }
-        else
-        {
-            Vector3 destination = _player.transform.position;
-            Vector3 newPos = Vector3.MoveTowards(_transform.position, destination, _speed * Time.deltaTime);
-            _transform.position = newPos;
+            else
+            {
+                _index++;
+            }
         }
         
     }

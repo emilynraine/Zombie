@@ -51,7 +51,7 @@ public class MSMScript : MonoBehaviour
                 Application.Quit();
             }
 
-            int rand = Random.Range(1, 750);
+            int rand = Random.Range(1, 1000);
             if (rand == 250)
             {
                 GameObject fish = GameObject.Instantiate(_fish1);
