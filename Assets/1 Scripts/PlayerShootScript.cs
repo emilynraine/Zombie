@@ -12,6 +12,9 @@ public class PlayerShootScript : MonoBehaviour
     MSMScript _manager;
     [SerializeField]
     private AudioClip _shootClip;
+    [SerializeField]
+    private AudioClip _powerUpClip;
+
     public GameObject _dummyHarpoon;
     public Transform _harpoonSpawnPtX;
     public Transform _harpoonSpawnPtY;
@@ -65,7 +68,7 @@ public class PlayerShootScript : MonoBehaviour
             if (_isReloaded)
             {
 
-                StartCoroutine(PlaySound(_shootClip));
+                StartCoroutine(PlayShootSound(_shootClip));
                 _dummyHarpoon.SetActive(false);
 
                 GameObject harpoon = _harpoonPool.GetObject();
@@ -152,11 +155,30 @@ public class PlayerShootScript : MonoBehaviour
 
     public IEnumerator PowerUpAnnounce()
     {
+        StartCoroutine(PlayPowerUpSound(_powerUpClip));
         _activeText.text = ("\u221e");
         _announced = true;
         _powerUpText.text = "Press 'E' to activate instant reloads";
         yield return new WaitForSeconds(5.0f);
         _powerUpText.text = "";
+    }
+
+    IEnumerator PlayPowerUpSound(AudioClip _clip)
+    {
+        AudioSource _audioSource = GetComponent<AudioSource>();
+        _audioSource.clip = _clip;
+        _audioSource.Play();
+        yield return new WaitForSeconds(_audioSource.clip.length);
+    }
+
+    IEnumerator PlayShootSound(AudioClip _clip)
+    {
+        AudioSource _audioSource = GetComponent<AudioSource>();
+        _audioSource.clip = _clip;
+        _audioSource.Play();
+        yield return new WaitForSeconds(_audioSource.clip.length);
+
+
     }
 
 }
